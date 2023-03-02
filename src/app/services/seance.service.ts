@@ -27,5 +27,11 @@ export class SeanceService {
     });
   }
 
-
+  getJoinedSeances(){
+    return this.api.get<SeanceList[]>("seance/user", {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${AuthService.getToken()?.token}`
+      })
+    });
+  }
 }
