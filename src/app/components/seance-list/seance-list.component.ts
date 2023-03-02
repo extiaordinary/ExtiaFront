@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeanceListComponent implements OnInit {
 
-
+  arraySeance = null
+  /*
   arraySeance = [
     {
     name: "rodriguez",
@@ -21,7 +22,67 @@ export class SeanceListComponent implements OnInit {
       name: "rodriguez",
       date: "25/02/2002"
     },
-  ]
+    {
+      name: "rodriguez",
+      date: "25/02/2002"
+      },
+      {
+        name: "rodriguez",
+        date: "25/02/2002"
+      },
+      {
+        name: "rodriguez",
+        date: "25/02/2002"
+      },
+      {
+        name: "rodriguez",
+        date: "25/02/2002"
+        },
+        {
+          name: "rodriguez",
+          date: "25/02/2002"
+        },
+        {
+          name: "rodriguez",
+          date: "25/02/2002"
+        },
+        {
+          name: "rodriguez",
+          date: "25/02/2002"
+          },
+          {
+            name: "rodriguez",
+            date: "25/02/2002"
+          },
+          {
+            name: "rodriguez",
+            date: "25/02/2002"
+          },
+          {
+            name: "rodriguez",
+            date: "25/02/2002"
+            },
+            {
+              name: "rodriguez",
+              date: "25/02/2002"
+            },
+            {
+              name: "rodriguez",
+              date: "25/02/2002"
+            },
+            {
+              name: "rodriguez",
+              date: "25/02/2002"
+              },
+              {
+                name: "rodriguez",
+                date: "25/02/2002"
+              },
+              {
+                name: "rodriguez",
+                date: "25/02/2002"
+              },
+  ] */
 
   constructor() { }
 

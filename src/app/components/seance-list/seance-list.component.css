@@ -1,0 +1,20 @@
+.name-table {
+    max-width: 110px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis 
+}
+
+th, td {
+    --tw-bg-opacity: 1;
+    background-color: hsl(var(--b2, var(--b1)) / var(--tw-bg-opacity));
+}
+
+.scroll-div {
+    overflow-y:scroll; 
+}
+
+.tab-height {
+    height:80vh;
+    max-height: 80vh;
+}
