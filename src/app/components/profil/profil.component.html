@@ -1,0 +1,48 @@
+<input type="checkbox" id="my-modal" class="modal-toggle" />
+<div class="modal">
+    <div class="modal-box">
+        <div class="center">
+            <div class="avatar placeholder">
+                <div class="bg-neutral-focus text-neutral-content rounded-full w-24">
+                    <span class="text-3xl">PG</span>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg">Paul Germain</h3>
+                <h4></h4>
+            </div>
+        </div>
+        <div class="form-control">
+            <label class="label">
+                <span class="label-text">Test</span>
+            </label>
+            <input type="text" placeholder="" value="oui" class="input" [disabled]="isEdit" />
+        </div>
+        <div class="form-control">
+            <label class="label">
+                <span class="label-text">Test</span>
+            </label>
+            <input type="text" placeholder="" value="oui" class="input" [disabled]="isEdit" />
+        </div>
+        <div class="form-control">
+            <label class="label">
+                <span class="label-text">Test</span>
+            </label>
+            <input type="text" placeholder="" value="oui" class="input" [disabled]="isEdit" />
+        </div>
+        <div class="form-control">
+            <label class="label">
+                <span class="label-text">Test</span>
+            </label>
+            <input type="text" placeholder="" value="oui" class="input" [disabled]="isEdit" />
+        </div>
+        <div class="flex">
+            <div class="modal-action">
+                <label class="btn" (click)="editForm()">Modifier</label>
+            </div>
+            <div class="modal-action">
+                <label for="my-modal" class="btn">Retour</label>
+            </div>
+        </div>
+    </div>
+</div>
