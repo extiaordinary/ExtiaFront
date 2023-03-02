@@ -14,4 +14,6 @@ export class SeanceCardComponent implements OnInit {
 
 
 
+
+
 }

@@ -1,0 +1,27 @@
+<input type="checkbox" id="seance-modal" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box">
+    <div class="center">
+      <div class="avatar placeholder">
+        <div class="bg-neutral-focus text-neutral-content rounded-full w-24">
+          <span class="text-3xl">seance</span>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg">Seance</h3>
+        <h4></h4>
+      </div>
+    </div>
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text">Resume</span>
+      </label>
+      <input type="text" placeholder="" value="oui" class="input" [disabled]="isEdit" />
+    </div>
+    <div class="flex-space-around">
+      <div class="modal-action">
+        <label for="seance-modal" class="btn">Retour</label>
+      </div>
+    </div>
+  </div>
+</div>
