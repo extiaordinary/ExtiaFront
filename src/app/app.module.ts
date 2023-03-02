@@ -10,6 +10,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SeanceCardComponent } from './components/seance-card/seance-card.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
       ProfilComponent,
       LoginComponent,
       RegisterComponent,
-      TabsComponent
+      TabsComponent,
+      SeanceCardComponent
     ],
   imports: [
     BrowserModule,
