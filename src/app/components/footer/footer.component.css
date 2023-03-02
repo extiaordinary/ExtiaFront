@@ -2,3 +2,8 @@
   background-color: #ff914d;
   color: white;
   }
+
+.bottom-footer {
+  position: fixed;
+  bottom: 0;
+}

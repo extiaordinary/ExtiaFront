@@ -1,3 +1,8 @@
 .div-tabs {
-    margin: 20px 20px 20px 0px;
+    margin: 5px 20px 20px 20px;
+}
+
+.seance-card-padding{
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
