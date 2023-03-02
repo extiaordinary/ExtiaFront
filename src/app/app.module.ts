@@ -9,6 +9,7 @@ import {FooterComponent} from "./components/footer/footer.component";
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { TabsComponent } from './components/tabs/tabs.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
     ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
   ],
   providers: [],
