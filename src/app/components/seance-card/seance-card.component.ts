@@ -12,4 +12,6 @@ export class SeanceCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
 }
