@@ -1,8 +1,4 @@
-.center {
-    text-align: center;
-}
-
-.flex {
+.flex-space-around {
     display: flex;
     justify-content: space-around;
 }
