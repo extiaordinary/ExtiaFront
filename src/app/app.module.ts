@@ -4,11 +4,14 @@ import { RouterModule, Routes } from '@angular/router'
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NavBarComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
