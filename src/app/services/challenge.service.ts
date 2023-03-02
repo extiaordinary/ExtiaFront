@@ -16,7 +16,7 @@ export class ChallengeService {
 
   // Header is necessary to know ho is the user
   getMyTodoChallenge(){
-    this.api.get(`challenge/toDoChallenges/`, {
+    return this.api.get(`challenge/toDoChallenges/`, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${AuthService.getToken()?.token}`
       })
