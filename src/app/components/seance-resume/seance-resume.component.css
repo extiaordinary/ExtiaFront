@@ -2,3 +2,6 @@
   display: flex;
   justify-content: space-around;
 }
+.w-140 {
+  width: 85px;
+}
