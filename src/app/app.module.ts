@@ -6,6 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import {FooterComponent} from "./components/footer/footer.component";
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    NavBarComponent,
+    NavBarComponent,
+    LoginComponent,
+    RegisterComponent
+  ],
 
 @NgModule({
     declarations: [
