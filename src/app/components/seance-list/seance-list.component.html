@@ -1,0 +1,21 @@
+<div class="scroll-div tab-height" *ngIf="arraySeance != null">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let seance of arraySeance">
+          <td class="name-table">{{seance.name}}</td>
+          <td>{{seance.date}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<div class="tab-height" *ngIf="arraySeance == null">
+  <p>Pas de Seances</p>
+</div>
+
+<div class="divider"></div>

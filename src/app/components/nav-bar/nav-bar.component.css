@@ -2,3 +2,10 @@
     background: #ff914d;
     color: white;
 }
+
+.text-dropdown {
+    background: white;
+    border: 0px;
+    color: black;
+    font-size: 12px;
+}
