@@ -1,3 +1,21 @@
-<div class="tab-height"> test </div>
+<div class="scroll-div tab-height" *ngIf="classement != null">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Score</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of classement">
+      <td class="name-table">{{user.firstName}} {{user.lastName}}</td>
+      <td>{{user.points}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="tab-height" *ngIf="classement == null">
+  <p>Pas de Classement</p>
+</div>
 
 <div class="divider"></div>
