@@ -1,0 +1,18 @@
+<div class="overflow-x-auto">
+    <table class="table w-full">
+      <!-- head -->
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- row 1 -->
+        <tr *ngFor="let el of arraySeance">
+          <td>{{el.name}}</td>
+          <td>{{el.date}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

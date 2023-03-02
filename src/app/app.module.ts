@@ -12,6 +12,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SeanceCardComponent } from './components/seance-card/seance-card.component';
 import { SeanceResumeComponent } from './components/seance-resume/seance-resume.component';
+import { SeanceListComponent } from './components/seance-list/seance-list.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SeanceResumeComponent } from './components/seance-resume/seance-resume.
       RegisterComponent,
       TabsComponent,
       SeanceCardComponent,
-      SeanceResumeComponent
+      SeanceResumeComponent,
+      SeanceListComponent
     ],
   imports: [
     BrowserModule,
