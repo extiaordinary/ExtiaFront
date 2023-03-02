@@ -6,6 +6,12 @@ export interface User {
   dateOfBirth: Date;
 }
 
+export interface UserClassement {
+  firstName: string;
+  lastName: string;
+  points: number;
+}
+
 export interface JwtToken {
   token: string;
 }
