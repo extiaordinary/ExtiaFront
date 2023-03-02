@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {SeanceList} from "../../model/models";
+import {SeanceService} from "../../services/seance.service";
 
 @Component({
   selector: 'app-home',
@@ -7,11 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  tabSeances = [1,1,1,1,1,1,1,1,1];
+  tabSeances: SeanceList[] = []
 
-  constructor() { }
+  constructor(private seanceService: SeanceService) { }
 
   ngOnInit(): void {
+    this.seanceService.getAll().subscribe(
+      (res) => {
+        this.tabSeances = res;
+      },
+      (error) => {
+        console.log(error);
+      })
   }
 
 }
