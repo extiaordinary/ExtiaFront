@@ -1,7 +1,7 @@
 <div class="grid grid-cols-3 sm:grid-cols-12 gap-4">
   <div class="sm:grid sm:grid-cols-3 gap-4 col-span-12 sm:col-span-9">
     <div *ngFor="let seance of tabSeances" class="flex seance-card-padding">
-      <app-seance-card></app-seance-card>
+      <app-seance-card [seanceCard]="seance"></app-seance-card>
     </div>
   </div>
   <div class="sm:col-span-12 col-span-12 md:col-span-3 bg-base-200 div-tabs">

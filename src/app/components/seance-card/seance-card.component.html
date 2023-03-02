@@ -1,11 +1,12 @@
  <div class="card w-80 bg-base-100 shadow-xl ">
-    <figure><img src="assets/images/musculation.jpg" alt="picSport" /></figure>
+    <figure><img src="{{seanceCard?.image}}" alt="picSport" /></figure>
     <div class="card-body">
-      <h2 class="card-title">Musculation</h2>
-      <p>Pompes, abdos, squats. Entretenez le corps dont vous avez toujours rever </p>
+      <h2 class="card-title">{{seanceCard?.name}}</h2>
+      <p>{{seanceCard?.description}} </p>
       <div class="card-actions justify-end">
-        <button  class="btn" >Défier un ami</button>
-        <label for="seance-modal" class="btn btn-primary">Details</label>
+        <button class="btn" >Défier un ami</button>
+        <!--  TODO: comportement du button -> fonction joinSeance a deplacer dans la modal ? -->
+        <label for="seance-modal" class="btn btn-primary" (click)="joinSeance()">Rejoindre</label>
       </div>
     </div>
   </div>

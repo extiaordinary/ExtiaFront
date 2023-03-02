@@ -32,6 +32,7 @@ export interface Seance {
   rewardPoints: number;
   dateStart: Date;
   dateEnd: Date;
+  image: String;
   coach: UserResponse;
   participants: UserResponse[];
 }
@@ -43,6 +44,7 @@ export interface SeanceList {
   rewardPoints: number;
   dateStart: Date;
   dateEnd: Date;
+  image: String;
   coach: UserResponse;
 }
 
