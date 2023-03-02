@@ -9,15 +9,6 @@ import {FooterComponent} from "./components/footer/footer.component";
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    NavBarComponent,
-    NavBarComponent,
-    LoginComponent,
-    RegisterComponent
-  ],
 
 @NgModule({
     declarations: [
@@ -25,7 +16,9 @@ import { RegisterComponent } from './pages/register/register.component';
         HomeComponent,
         NavBarComponent,
         FooterComponent,
-      ProfilComponent
+      ProfilComponent,
+      LoginComponent,
+      RegisterComponent
     ],
   imports: [
     BrowserModule,
