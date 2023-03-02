@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {SeanceList} from "../model/models";
+import {Seance, SeanceList} from "../model/models";
 import {AuthService} from "./auth.service";
 
 @Injectable({
@@ -12,6 +12,10 @@ export class SeanceService {
 
   getAll(){
     return this.api.get<SeanceList[]>("seance");
+  }
+
+  getDetail(seanceId: string) {
+    return this.api.get<Seance>(`seance/${seanceId}`);
   }
 
   joinSeance(seanceId: string) {
