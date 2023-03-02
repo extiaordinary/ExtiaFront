@@ -1,4 +1,4 @@
-<div class="scroll-div tab-height" *ngIf="arraySeance != null">
+<div class="scroll-div tab-height" *ngIf="seances != null">
     <table class="table">
       <thead>
         <tr>
@@ -7,14 +7,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let seance of arraySeance">
+        <tr *ngFor="let seance of seances">
           <td class="name-table">{{seance.name}}</td>
-          <td>{{seance.date}}</td>
+          <td>{{seance.dateStart}} to {{seance.dateEnd}}</td>
         </tr>
       </tbody>
     </table>
 </div>
-<div class="tab-height" *ngIf="arraySeance == null">
+<div class="tab-height" *ngIf="seances == null">
   <p>Pas de Seances</p>
 </div>
 
