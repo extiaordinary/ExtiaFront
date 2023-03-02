@@ -11,10 +11,17 @@ export class SeanceService {
   }
 
   getAll(){
-    return this.api.get<SeanceList[]>("seance", {
+    return this.api.get<SeanceList[]>("seance");
+  }
+
+  joinSeance(seanceId: string) {
+    // TODO: This will return string, on success refresh ?
+    return this.api.post(`seance/addUser/${seanceId}`, {}, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${AuthService.getToken()?.token}`
       })
     });
   }
+
+
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {SeanceList} from "../../model/models";
+import {SeanceService} from "../../services/seance.service";
 
 @Component({
   selector: 'app-seance-card',
@@ -6,38 +8,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seance-card.component.css']
 })
 export class SeanceCardComponent implements OnInit {
-  isRegisteredOnSeance = false;
+  @Input() seanceCard: SeanceList | null = null;
 
-  sportName = {
-    'Musculation': "Musculation",
-    'Yoga': "Yoga",
-    'Running': "Running"
-  }
-  sportShortDescriptionDictionary = {
-    'Musculation': "Salle de muscu avec machines. Pompes, abdos, squats, tout y est. Le corps de reve vous attend !",
-    'Yoga': "Relaxation, meditation, visualisation, etc. Votre esprit ne demande que ça . Place limitées ...",
-    'Running': "En salle ou à l'exterieur ! Les kilomètres ne demandent qu'à etre parcourues."
-  }
-
-  constructor() { }
+  constructor(private seanceService: SeanceService) { }
 
   ngOnInit(): void {
   }
 
+  isUserRegisteredOnSeance() {
+    return this.seanceCard?.isUserInSeance;
+  }
+
   registerOnSeance() {
-    this.isRegisteredOnSeance = !this.isRegisteredOnSeance;
-    //call API to register on seance
+    if(this.seanceCard){
+      this.seanceService.joinSeance(this.seanceCard.id).subscribe(
+        () => {
+          console.log("Vous avez rejoins la seance");
+        },
+        () => {
+          console.log("Une erreur est survenue");
+        }
+      )
+    }
   }
 
   cancelRegistrationOnSeance() {
-    this.isRegisteredOnSeance = !this.isRegisteredOnSeance;
+    // this.isRegisteredOnSeance = !this.isRegisteredOnSeance;
     //call API to cancel registration on seance
+    console.log("TODO");
   }
 
   challengeFriend() {
     //call API to challenge friend
 
   }
-
 
 }

@@ -32,8 +32,10 @@ export interface Seance {
   rewardPoints: number;
   dateStart: Date;
   dateEnd: Date;
+  image: String;
   coach: UserResponse;
   participants: UserResponse[];
+  isUserInSeance: boolean|undefined;
 }
 
 export interface SeanceList {
@@ -43,7 +45,9 @@ export interface SeanceList {
   rewardPoints: number;
   dateStart: Date;
   dateEnd: Date;
+  image: String;
   coach: UserResponse;
+  isUserInSeance: boolean|undefined;
 }
 
 export enum Role {
