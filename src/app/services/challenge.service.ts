@@ -9,7 +9,7 @@ export class ChallengeService {
   constructor(private api: HttpClient) {
   }
 
-  // TODO: add response type
+  // TODO: add response type for all
   getOwnChallengesByOwnerId(ownerId: string){
     return this.api.get(`challenge/ownChallenges/${ownerId}`)
   }
