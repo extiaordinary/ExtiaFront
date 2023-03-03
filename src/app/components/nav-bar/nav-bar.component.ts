@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,7 +10,7 @@ export class NavBarComponent implements OnInit {
 
   isAuth = false ;
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -20,4 +21,7 @@ export class NavBarComponent implements OnInit {
     location.reload();
   }
 
+  challengeProposed(){
+    this.router.navigate(['/challengesProposed']);
+  }
 }
