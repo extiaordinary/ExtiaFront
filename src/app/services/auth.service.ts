@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { tap } from 'rxjs';
 import {JwtToken, RegisterDto} from "../model/models";
+import {UserService} from "./user.service";
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,7 @@ import {JwtToken, RegisterDto} from "../model/models";
 export class AuthService {
   private _token: JwtToken | null = AuthService.getToken();
 
-  constructor(private api: HttpClient) {
+  constructor(private api: HttpClient, private userService: UserService) {
     // TODO: for disconnect when token expires
     // this.api.get<User>('auth/me', { withCredentials: true }).subscribe({
     //   next: (user) => {
@@ -47,6 +48,9 @@ export class AuthService {
         tap((token) => {
           this._token = token;
           AuthService.storeToken(token);
+          this.userService.getMe().subscribe((user) => {
+            UserService.storeUser(user);
+          })
         }),
       );
   }

@@ -41,7 +41,6 @@ export interface Seance {
   image: String;
   coach: UserResponse;
   participants: UserResponse[];
-  isUserInSeance: boolean|undefined;
 }
 
 export interface SeanceList {
@@ -53,7 +52,6 @@ export interface SeanceList {
   dateEnd: Date;
   image: String;
   coach: UserResponse;
-  isUserInSeance: boolean|undefined;
 }
 
 export interface Challenge {
@@ -67,6 +65,11 @@ export interface Challenge {
   seance: string | SeanceList;
   isAchieved: boolean;
   tag: string;
+}
+
+export interface IsInSeance {
+  isCoach: boolean;
+  isCollaborator: boolean;
 }
 
 export enum Role {

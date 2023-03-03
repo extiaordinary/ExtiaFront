@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Seance, SeanceList} from "../model/models";
+import {IsInSeance, Seance, SeanceList} from "../model/models";
 import {AuthService} from "./auth.service";
 
 @Injectable({
@@ -29,6 +29,14 @@ export class SeanceService {
 
   getJoinedSeances(){
     return this.api.get<SeanceList[]>("seance/user", {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${AuthService.getToken()?.token}`
+      })
+    });
+  }
+
+  IsUserJoinedSeance(seanceId: string){
+    return this.api.get<IsInSeance>(`seance/isUserInSeance/${seanceId}`, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${AuthService.getToken()?.token}`
       })

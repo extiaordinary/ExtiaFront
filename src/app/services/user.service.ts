@@ -21,4 +21,13 @@ export class UserService {
       })
     })
   }
+
+  static getUser(): UserResponse | null {
+    const user = localStorage.getItem('user');
+    return user ? JSON.parse(user) : null;
+  }
+
+  static storeUser(user: UserResponse) {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
 }
