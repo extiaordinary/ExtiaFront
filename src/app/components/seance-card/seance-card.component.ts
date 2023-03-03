@@ -7,6 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeanceCardComponent implements OnInit {
   isRegisteredOnSeance = false;
+  tabUser : any[] = [
+    {
+      "id": 1,
+      "firstname": "John Doe",
+    }
+  ] ;
+
+  tabMyChallenge : any[] = [
+    {
+      "id": 1,
+      "description" : "Faire 50 pompes à chaque fin de séance",
+    }
+  ] ;
+
 
   sportName = {
     'Musculation': "Musculation",

@@ -1,4 +1,42 @@
- <div class="card w-80 bg-base-100 shadow-xl ">
+<input type="checkbox" id="my-modal-6" class="modal-toggle" />
+<div class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">Lancer un défi </h3>
+    <br>
+
+
+
+    <label>Votre cible</label>
+    <select class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" >
+      <option *ngFor="let user of tabUser" [value]="user.firstname">{{user.firstname}}</option>
+    </select>
+    <br>
+
+    <label>Quel challenge proposez-vous ? </label>
+    <select class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" >
+      <option *ngFor="let challenge of tabMyChallenge" [value]="challenge.description">{{challenge.description}}</option>
+    </select>
+    <br>
+
+    <label>Difficulté</label>
+      <select class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" >
+        <option>Facile</option>
+        <option>Moyen</option>
+        <option>Difficile</option>
+      </select>
+    <br/>
+
+
+    <p class="py-4">Lancer des defis vous rapporte plus de points que la norme en fonction de la difficulté. Choisissez bien votre cible !</p>
+    <div class="modal-action">
+      <label for="my-modal-6" class="btn">Retour</label>
+      <label for="my-modal-6" class="btn btn-primary" (click)="challengeFriend()">Lancer le defi</label>
+    </div>
+  </div>
+</div>
+
+
+<div class="card w-80 bg-base-100 shadow-xl ">
     <figure><img src="assets/images/musculation.jpg" alt="picSport" /></figure>
     <div class="card-body">
       <h2 class="card-title">{{sportName.Musculation}}</h2>
@@ -11,10 +49,12 @@
         <button class="btn btn-wide btn-outline" *ngIf="isRegisteredOnSeance"(click)="cancelRegistrationOnSeance()">
           Se désinscrire
         </button>
-        <button  class="btn" (click)="challengeFriend()">Défier un ami</button>
+        <label for="my-modal-6" class="btn" (click)="challengeFriend()">Défier un ami</label>
         <label for="seance-modal" class="btn" >+ d'infos</label>
       </div>
     </div>
   </div>
  <app-seance-resume></app-seance-resume>
+
+
 

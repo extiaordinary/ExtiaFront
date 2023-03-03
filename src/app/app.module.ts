@@ -15,7 +15,7 @@ import { SeanceResumeComponent } from './components/seance-resume/seance-resume.
 import { SeanceListComponent } from './components/seance-list/seance-list.component';
 import { ClassementListComponent } from './components/classement-list/classement-list.component';
 import { ChallengeListComponent } from './components/challenge-list/challenge-list.component';
-
+import { DefiFormComponent } from './components/defi-form/defi-form.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +31,9 @@ import { ChallengeListComponent } from './components/challenge-list/challenge-li
       SeanceResumeComponent,
       SeanceListComponent,
       ClassementListComponent,
-      ChallengeListComponent
+      ChallengeListComponent,
+      DefiFormComponent,
+
     ],
   imports: [
     BrowserModule,
