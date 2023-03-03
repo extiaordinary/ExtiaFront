@@ -5,10 +5,10 @@
       <p>{{seanceCard?.description}} </p>
       <div class="card-actions justify-between">
 
-        <button class="btn btn-wide btn-primary" *ngIf="!isUserRegisteredOnSeance()" (click)="registerOnSeance()">
+        <button class="btn btn-wide btn-primary" *ngIf="showRegisterToSeance()" (click)="registerOnSeance()">
           S'inscrire
         </button>
-        <button class="btn btn-wide btn-outline" *ngIf="isUserRegisteredOnSeance"(click)="cancelRegistrationOnSeance()">
+        <button class="btn btn-wide btn-outline" *ngIf="showCancelRegisterToSeance()" (click)="cancelRegistrationOnSeance()">
           Se désinscrire
         </button>
         <button  class="btn" (click)="challengeFriend()">Défier un ami</button>
