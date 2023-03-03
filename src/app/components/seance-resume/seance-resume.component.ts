@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeanceResumeComponent implements OnInit {
   isEdit = true;
+  seanceName = 'Muscu';
+  seanceDate = '2021-01-01';
+
   constructor() { }
 
   ngOnInit(): void {
@@ -15,5 +18,14 @@ export class SeanceResumeComponent implements OnInit {
   editForm() {
     this.isEdit = !this.isEdit;
   }
+
+  sportObject = {
+    name: 'Muscu',
+    dateStart: '2021-01-01',
+    dateEnd : '2021-28-01',
+    duration: '1h',
+    description: 'Salle de muscu avec des machines. De nombreuses catégories de machines sont disponibles : cardio, musculation, haltères, poids libres, etc. Inscrivez-vous pour profiter de nos machines et de nos cours collectifs. N\'oubliez pas de challengez vos amis si vous vous en sentez capables !',
+  } ;
+
 
 }

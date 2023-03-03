@@ -1,11 +1,19 @@
  <div class="card w-80 bg-base-100 shadow-xl ">
     <figure><img src="assets/images/musculation.jpg" alt="picSport" /></figure>
     <div class="card-body">
-      <h2 class="card-title">Musculation</h2>
-      <p>Pompes, abdos, squats. Entretenez le corps dont vous avez toujours rever </p>
-      <div class="card-actions justify-end">
-        <button  class="btn" >Défier un ami</button>
-        <label for="seance-modal" class="btn btn-primary">Details</label>
+      <h2 class="card-title">{{sportName.Musculation}}</h2>
+      <p>{{sportShortDescriptionDictionary.Musculation}} </p>
+      <div class="card-actions justify-between">
+
+        <button class="btn btn-wide btn-primary" *ngIf="!isRegisteredOnSeance" (click)="registerOnSeance()">
+          S'inscrire
+        </button>
+        <button class="btn btn-wide btn-outline" *ngIf="isRegisteredOnSeance"(click)="cancelRegistrationOnSeance()">
+          Se désinscrire
+        </button>
+        <button  class="btn" (click)="challengeFriend()">Défier un ami</button>
+        <label for="seance-modal" class="btn" >+ d'infos</label>
+
       </div>
     </div>
   </div>

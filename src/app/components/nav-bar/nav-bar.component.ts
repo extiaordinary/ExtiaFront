@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  isAuth = true;
+  isAuth = true ;
 
   constructor() { }
 
