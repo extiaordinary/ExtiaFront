@@ -1,0 +1,20 @@
+.challenge-propose-list {
+    padding: 20px;
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title-propose {
+    font-size: 22px;
+}
+
+.flex {
+    justify-content: unset !important;
+}
+
+.btn-choose {
+    background-color: #ff914d !important;
+    border: 0px;
+}

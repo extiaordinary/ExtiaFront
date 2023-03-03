@@ -17,6 +17,7 @@ import { ClassementListComponent } from './components/classement-list/classement
 import { ChallengeListComponent } from './components/challenge-list/challenge-list.component';
 import {interceptors} from "./api/interceptor";
 import { HttpClientModule } from "@angular/common/http";
+import { ChallengeProposeListComponent } from './challenge-propose-list/challenge-propose-list.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { HttpClientModule } from "@angular/common/http";
       SeanceResumeComponent,
       SeanceListComponent,
       ClassementListComponent,
-      ChallengeListComponent
+      ChallengeListComponent,
+      ChallengeProposeListComponent
     ],
   imports: [
     BrowserModule,
