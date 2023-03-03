@@ -3,15 +3,15 @@
     <div>
       <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Créez un challenge</h2>
     </div>
-    <form class="mt-8 space-y-6" action="#" method="POST">
+    <form class="mt-8 space-y-6" [formGroup]="challengeForm">
       <input type="hidden" name="remember" value="true">
       <div class="-space-y-px rounded-md shadow-sm">
         <div>
           <input
             id="dateOfCreation"
-            type="date" formControlName="dateOfCreation" required
+            type="datetime-local" formControlName="dateStart" required
             class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-            placeholder="Date de crétion" />
+            placeholder="Date de création" />
           <label
             for="dateOfCreation"
             class="sr-only"
@@ -19,8 +19,24 @@
           >
         </div> <br/>
         <div>
+          <input
+            id="dateOfEnd"
+            type="datetime-local" formControlName="dateEnd" required
+            class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+            placeholder="Date de fin" />
+          <label
+            for="dateOfEnd"
+            class="sr-only"
+          ></label
+          >
+        </div> <br/>
+        <div>
           <label for="sport" class="sr-only">Sport</label>
-          <input id="sport" name="sport" type="name" autocomplete="sport" formControlName="sport" required class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Sport">
+          <input id="sport" name="sport" type="name" autocomplete="sport" formControlName="typeSport" required class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Sport">
+        </div> <br/>
+        <div>
+          <label for="seance" class="sr-only">Seance</label>
+          <input id="seance" name="seance" type="name" autocomplete="sport" formControlName="seance" required class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="Sport">
         </div> <br/>
         <div>
           <label for="description" class="sr-only">Description</label>
@@ -29,16 +45,16 @@
         <div>
           <label class="sr-only">Tag</label>
           <select class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" formControlName="tag">
-            <option>Facile</option>
-            <option>Moyen</option>
-            <option>Difficile</option>
+            <option value="LOW">Facile</option>
+            <option value="MEDIUM">Moyen</option>
+            <option value="HIGH">Difficile</option>
           </select>
         </div> <br/>
 
       </div>
 
       <div>
-        <button type="submit" required class="group relative flex w-full justify-center rounded-md border border-transparent bg-orange-500 py-2 px-4 text-sm font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2">
+        <button type="submit" (click)="submitChallenge()" required class="group relative flex w-full justify-center rounded-md border border-transparent bg-orange-500 py-2 px-4 text-sm font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2">
           Créer un challenge à proposer
         </button>
       </div>

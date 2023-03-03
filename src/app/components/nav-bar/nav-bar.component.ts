@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {Route, Router} from "@angular/router";
+import {AuthService} from "../../services/auth.service";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,9 +12,10 @@ export class NavBarComponent implements OnInit {
 
   isAuth = false ;
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private authService: AuthService, private userService: UserService) { }
 
   ngOnInit(): void {
+    this.isAuth = this.authService.isAuthenticated;
   }
 
   logout() {
@@ -22,6 +25,6 @@ export class NavBarComponent implements OnInit {
   }
 
   challengeProposed(){
-    this.router.navigate(['/challengesProposed']);
+    this.router.navigate(['/challenge-user', {ownerId: UserService.getUser()?.id}]).then();
   }
 }

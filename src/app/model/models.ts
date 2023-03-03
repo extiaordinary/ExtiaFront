@@ -17,6 +17,7 @@ export interface JwtToken {
 }
 
 export interface UserResponse {
+  id: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -70,6 +71,16 @@ export interface Challenge {
 export interface IsInSeance {
   isCoach: boolean;
   isCollaborator: boolean;
+}
+
+export interface CreateChallenge {
+  dateStart: Date;
+  dateEnd: Date;
+  description: string;
+  typeSport: string;
+  workout: string;
+  isAchieved: boolean;
+  tag: string
 }
 
 export enum Role {

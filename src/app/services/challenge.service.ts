@@ -1,13 +1,21 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {AuthService} from "./auth.service";
-import {Challenge} from "../model/models";
+import {Challenge, CreateChallenge} from "../model/models";
 
 @Injectable({
   providedIn: 'root',
 })
 export class ChallengeService {
   constructor(private api: HttpClient) {
+  }
+
+  createChallenge(challenge: CreateChallenge){
+    return this.api.post("challenge/add", challenge, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${AuthService.getToken()?.token}`
+      })
+    });
   }
 
   // TODO: add response type for all
