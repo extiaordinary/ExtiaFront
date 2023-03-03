@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  isAuth = true ;
+  isAuth = false ;
 
   constructor() { }
 
@@ -15,6 +15,8 @@ export class NavBarComponent implements OnInit {
   }
 
   logout() {
+    //add method to clear token then
+    this.isAuth = false;
     location.reload();
   }
 
