@@ -29,7 +29,7 @@ export class ChallengeProposeListComponent implements OnInit {
       this.challengeService.acceptChallenge(challengeId);
       this.router.navigate(['/home']);
     } else {
-      this.router.navigate(['/login'], {state: {data: { id: challengeId}}});
+      this.router.navigate(['/login'], {state: {data: { id: "5"}}});
     }
   }
 

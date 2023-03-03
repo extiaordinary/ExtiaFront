@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import {AuthService} from "../../services/auth.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import { ChallengeService } from 'src/app/services/challenge.service';
 
 @Component({
   selector: 'app-login',
@@ -11,10 +12,21 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
 
   loginForm: any;
+  challengerId = null;
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { }
+  constructor(private fb: FormBuilder, private authService: AuthService, 
+    private router: Router,
+    private challengeService: ChallengeService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    this.route.params
+      .subscribe(params => {
+        this.challengerId = params['id'];
+      }
+    );
+
     this.initUserForm();
   }
 
@@ -34,6 +46,10 @@ export class LoginComponent implements OnInit {
       }
       this.authService.authenticate(data.email, data.password).subscribe({
         next: () => {
+          if(this.challengerId != null){
+            console.log(this.challengerId)
+            //this.challengeService.acceptChallenge(this.challengerId);
+          }
           this.router.navigate(['home']).then();
         },
         error: () => {
