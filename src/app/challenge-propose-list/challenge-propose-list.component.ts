@@ -27,6 +27,7 @@ export class ChallengeProposeListComponent implements OnInit {
   signInToAccept(challengeId: any) {
     if (this.authService.isAuthenticated) {
       this.challengeService.acceptChallenge(challengeId);
+      this.router.navigate(['/home']);
     } else {
       this.router.navigate(['/login'], {state: {data: { id: challengeId}}});
     }
