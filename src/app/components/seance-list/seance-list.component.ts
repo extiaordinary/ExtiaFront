@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {SeanceList} from "../../model/models";
+import {SeanceService} from "../../services/seance.service";
 
 @Component({
   selector: 'app-seance-list',
@@ -7,85 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeanceListComponent implements OnInit {
 
-  
-  arraySeance = [
-    {
-    name: "rodriguez",
-    date: "25/02/2002"
-    },
-    {
-      name: "rodriguez",
-      date: "25/02/2002"
-    },
-    {
-      name: "rodriguez",
-      date: "25/02/2002"
-    },
-    {
-      name: "rodriguez",
-      date: "25/02/2002"
-      },
-      {
-        name: "rodriguez",
-        date: "25/02/2002"
-      },
-      {
-        name: "rodriguez",
-        date: "25/02/2002"
-      },
-      {
-        name: "rodriguez",
-        date: "25/02/2002"
-        },
-        {
-          name: "rodriguez",
-          date: "25/02/2002"
-        },
-        {
-          name: "rodriguez",
-          date: "25/02/2002"
-        },
-        {
-          name: "rodriguez",
-          date: "25/02/2002"
-          },
-          {
-            name: "rodriguez",
-            date: "25/02/2002"
-          },
-          {
-            name: "rodriguez",
-            date: "25/02/2002"
-          },
-          {
-            name: "rodriguez",
-            date: "25/02/2002"
-            },
-            {
-              name: "rodriguez",
-              date: "25/02/2002"
-            },
-            {
-              name: "rodriguez",
-              date: "25/02/2002"
-            },
-            {
-              name: "rodriguez",
-              date: "25/02/2002"
-              },
-              {
-                name: "rodriguez",
-                date: "25/02/2002"
-              },
-              {
-                name: "rodriguez",
-                date: "25/02/2002"
-              },
-  ] 
+  seances: SeanceList[] = [];
 
-  constructor() { }
+  constructor(private seanceService: SeanceService) { }
 
   ngOnInit(): void {
+    this.seanceService.getJoinedSeances().subscribe(
+      (res) => {
+        this.seances = res
+      },
+      (err) => {console.log(err)}
+    )
   }
 
 }

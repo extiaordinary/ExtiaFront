@@ -1,3 +1,21 @@
-<div class="tab-height"> ok </div>
+<div class="scroll-div tab-height" *ngIf="myAcceptedChallenges != null">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Description</th>
+      <th>De qui ?</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let challenge of myAcceptedChallenges">
+      <td class="name-table">{{challenge.description}}</td>
+      <td>{{challenge.collaboratorChallenger.firstName}} {{challenge.collaboratorChallenger.lastName}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="tab-height" *ngIf="myAcceptedChallenges == null">
+  <p>Pas de Seances</p>
+</div>
 
 <div class="divider"></div>

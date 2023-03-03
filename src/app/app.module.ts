@@ -15,6 +15,8 @@ import { SeanceResumeComponent } from './components/seance-resume/seance-resume.
 import { SeanceListComponent } from './components/seance-list/seance-list.component';
 import { ClassementListComponent } from './components/classement-list/classement-list.component';
 import { ChallengeListComponent } from './components/challenge-list/challenge-list.component';
+import {interceptors} from "./api/interceptor";
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -37,8 +39,9 @@ import { ChallengeListComponent } from './components/challenge-list/challenge-li
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [interceptors],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
