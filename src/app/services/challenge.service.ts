@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {AuthService} from "./auth.service";
+import {Challenge} from "../model/models";
 
 @Injectable({
   providedIn: 'root',
@@ -11,12 +12,12 @@ export class ChallengeService {
 
   // TODO: add response type for all
   getOwnChallengesByOwnerId(ownerId: string){
-    return this.api.get(`challenge/ownChallenges/${ownerId}`)
+    return this.api.get<Challenge[]>(`challenge/ownChallenges/${ownerId}`);
   }
 
   // Header is necessary to know ho is the user
   getMyTodoChallenge(){
-    return this.api.get(`challenge/toDoChallenges/`, {
+    return this.api.get<Challenge[]>(`challenge/toDoChallenges/`, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${AuthService.getToken()?.token}`
       })
@@ -33,6 +34,6 @@ export class ChallengeService {
   }
 
   getChallengeDetail(challengeId: string){
-    return this.api.get(`challenge/${challengeId}`)
+    return this.api.get<Challenge>(`challenge/${challengeId}`)
   }
 }

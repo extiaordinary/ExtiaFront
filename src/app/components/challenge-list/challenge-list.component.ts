@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ChallengeService} from "../../services/challenge.service";
+import {Challenge} from "../../model/models";
 
 @Component({
   selector: 'app-challenge-list',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChallengeListComponent implements OnInit {
 
-  constructor() { }
+  myAcceptedChallenges: Challenge[] = [];
+
+  constructor(private challengeService: ChallengeService) { }
 
   ngOnInit(): void {
+    this.challengeService.getMyTodoChallenge().subscribe(
+      (res) => {
+        this.myAcceptedChallenges = res;
+      },
+    (err) => {
+        console.log('une erreur est survenue' + err);
+    }
+    )
   }
 
 }
