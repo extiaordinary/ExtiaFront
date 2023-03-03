@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 import { ChallengeService } from '../services/challenge.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class ChallengeProposeListComponent implements OnInit {
 
   challArray: any;
 
-  constructor(private router: Router, private route: ActivatedRoute, private challengeService: ChallengeService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private challengeService: ChallengeService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.route.queryParams
@@ -24,7 +25,11 @@ export class ChallengeProposeListComponent implements OnInit {
   }
 
   signInToAccept(challengeId: any) {
-    this.router.navigate(['/login'], {state: {data: { id: challengeId}}});
+    if (this.authService.isAuthenticated) {
+      this.challengeService.acceptChallenge(challengeId);
+    } else {
+      this.router.navigate(['/login'], {state: {data: { id: challengeId}}});
+    }
   }
 
 }
