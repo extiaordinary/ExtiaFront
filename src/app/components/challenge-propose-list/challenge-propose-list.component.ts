@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
-import { ChallengeService } from '../services/challenge.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { ChallengeService } from 'src/app/services/challenge.service';
 
 @Component({
   selector: 'app-challenge-propose-list',
@@ -29,7 +29,7 @@ export class ChallengeProposeListComponent implements OnInit {
       this.challengeService.acceptChallenge(challengeId);
       this.router.navigate(['/home']);
     } else {
-      this.router.navigate(['/login'], {state: {data: { id: "5"}}});
+      this.router.navigate(['/login'], {state: {data: { id: challengeId}}});
     }
   }
 

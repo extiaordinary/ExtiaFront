@@ -46,10 +46,6 @@ export class LoginComponent implements OnInit {
       }
       this.authService.authenticate(data.email, data.password).subscribe({
         next: () => {
-          if(this.challengerId != null){
-            console.log(this.challengerId)
-            //this.challengeService.acceptChallenge(this.challengerId);
-          }
           this.router.navigate(['home']).then();
         },
         error: () => {

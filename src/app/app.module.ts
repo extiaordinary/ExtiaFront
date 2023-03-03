@@ -17,7 +17,7 @@ import { ClassementListComponent } from './components/classement-list/classement
 import { ChallengeListComponent } from './components/challenge-list/challenge-list.component';
 import {interceptors} from "./api/interceptor";
 import { HttpClientModule } from "@angular/common/http";
-import { ChallengeProposeListComponent } from './challenge-propose-list/challenge-propose-list.component';
+import { ChallengeProposeListComponent } from './components/challenge-propose-list/challenge-propose-list.component';
 import { ChallengeProposedComponent } from './components/challenge-proposed/challenge-proposed.component';
 
 
